@@ -1,7 +1,7 @@
 body {
   color: black;
-  background: white;
-
+  /*background: white;*/
+bgcolor="#FFDEAD"
   font-family: Arial, Helvetica, sans-serif;
 /*
  * It's a Bad Idea(tm) to use fixed font sizes.
