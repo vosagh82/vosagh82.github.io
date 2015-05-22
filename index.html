@@ -5853,9 +5853,17 @@ sadf
 
 <br>
 <br>
+<br>При установке debain 8 на raid 10 из дисков 4Tb ошибка установки grub2
+решение
+
 <br>
-<br>
-<br>
+root@fwhlin:/mnt# grub-install /dev/sdb
+Installing for i386-pc platform.
+grub-install: warning: this GPT partition label contains no BIOS Boot Partition; embedding won't be possible.
+grub-install: error: embedding is not possible, but this is required for cross-disk install.
+root@fwhlin:/mnt# 
+<br>решение:
+#parted /dev/sdb set 1 bios_grub on
 <br>
 <br>
 <br>
