@@ -5857,13 +5857,54 @@ sadf
 решение</h1>
 
 <br>
-root@fwhlin:/mnt# grub-install /dev/sdb
-Installing for i386-pc platform.
-grub-install: warning: this GPT partition label contains no BIOS Boot Partition; embedding won't be possible.
-grub-install: error: embedding is not possible, but this is required for cross-disk install.
-root@fwhlin:/mnt# 
-<br>решение:
-#parted /dev/sdb set 1 bios_grub on
+<br>4 жестких диска по 4 Тб
+<br>Задача повысить отказоустойчивость.
+<br>1. Проблема с устоновкой grub2 на диски с gpt
+<br>решение создаем на каждом диске раздел чуть больше 3 Mb
+<br>и назначаем ему флаг bios_grub делал с помощью Live CD Knopix утелитой Gparted
+<br>Сделал раздел 10 Мб с флагом bios_grub
+<br>под систему 100 Gb в LVM добавил в raid10 /dev/md0
+<br>все остальное в raid 10 /dev/md1
+<br>при установке системы указываем установить grub на /dev/sda
+<br>установка проходит успешно но grub установлен только на одном диске!
+<br>
+<br>2. Установить grub2 на все диски после запуска системы 
+<br>выполним команду dpkg-reconfigure grub-pc все настройки по умолчанию в конце выбираем диски на которые 
+<br>установим grub
+<br>https://wiki.debian.org/DebianInstaller/SoftwareRaidRoot
+<br>
+<br>3. После удаление жестоко диска система не гузиться ошибка не видит LVM
+<br>нашел решение на 
+<br>http://diff.org.ua/archives/2827
+<br>
+<br>В работающей системе создаем файлик:
+<br>
+<br>~# vim /etc/initramfs-tools/scripts/init-premount/assemble-md
+<br>и добавляем туда вот что:
+<br>
+<br>mdadm -S /dev/md0
+<br>mdadm -S /dev/md1
+<br>mdadm -A --scan
+<br>Даем права на выполнение:
+<br>
+<br>~# chmod +x /etc/initramfs-tools/scripts/init-premount/assemble-md
+<br>Обновляем initrd:
+<br>
+<br>~# update-initramfs -u
+<br>Вот и все … выключаем сервак, отрубаем винчестер и пробуем грузиться. У меня получилось!
+<br>
+<br>
+<br>4.Проблема если вытащить любых 2 диска систем не грузиться 
+<br>
+<br> 
+<br>полезные команды:
+<br>посмотреть статус raid
+<br>#cat /proc/mdstat
+<br>и
+<br>#mdadm --detail /dev/md0
+<br>
+<br>добавить новы диск например sda1 диск в raid md0
+<br>#mdadm /dev/md0 -a /dev/sda1
 <br>
 <br>
 <br>
