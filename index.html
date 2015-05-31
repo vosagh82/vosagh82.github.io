@@ -5907,6 +5907,21 @@ sadf
 <br>#mdadm /dev/md0 -a /dev/sda1
 <br>
 <br>
+<br><h1>Changing  Screen Resolution in a Hyper-V VM РАЗРЕШЕНИЕ КОНСОЛИ</h1>
+<br>Open Terminal
+<br>Type: sudo vi /etc/default/grub
+<br>Find the line starting with GRUB_CMDLINE_LINUX_DEFAULT, and add video=hyperv_fb:[the resolution you want].  The resolution I want is 1280x720.  So my line ends up looking like this: GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=hyperv_fb:1280x720"
+<br>Write the changes and quit vi.
+<br>Run: sudo update-grub
+<br>Reboot the virtual machine
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
