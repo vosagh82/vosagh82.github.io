@@ -5965,7 +5965,13 @@ Status: Downloaded newer image for ubuntu:latest
 root@f3e5b3b575bd:/# cat /etc/issue
 Ubuntu 14.04.2 LTS \n \l
 <br>
-<br>
+<br><h1>Долгое Подключение по SSH -- Убираем Задержку</h1>
+<br># vi /etc/ssh/sshd_config
+<br>добавляем
+<br>UseDNS no
+<br>GSSAPIAuthentication no
+<br>перезапускаем службу
+<br>sudo service ssh restart
 <br>
 <br>
 <h1>The End.</h1>
