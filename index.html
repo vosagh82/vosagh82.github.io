@@ -5973,6 +5973,24 @@ Ubuntu 14.04.2 LTS \n \l
 <br>перезапускаем службу
 <br>sudo service ssh restart
 
+<br>sudo apt-get install openssh-server
+<br>Для начала, произведем начальную настройку ssh сервера для авторизации по ключу. Откроем на редактирование файл /etc/ssh/sshd_config
+<br>
+<br>sudo nano /etc/ssh/sshd_config
+<br>Тут нас интересуют следующие строки, их всего три (Должны быть раскомментированы, и иметь указанные мной значения):
+<br>
+<br>...........
+<br>RSAAuthentication yes
+<br>PubkeyAuthentication yes
+<br>...........
+<br>AuthorizedKeysFile     %h/.ssh/authorized_keys
+<br>Перезапустим сервер ssh:
+<br>1
+<br>sudo restart ssh
+
+
+
+
 <b> Разрешить вход root
 меняем
 FROM:
