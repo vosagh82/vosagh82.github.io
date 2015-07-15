@@ -5916,6 +5916,29 @@ sadf
 <br>Reboot the virtual machine
 <br>
 <br>
+<br><h1>После установки diebin 7 на Raid-6 получил ошибку.</h1>
+<br>
+<br>error: file '/boot/grub/i386-pc/normal.mod' not found
+<br>Entering rescue mode...
+<br>
+<br>Грузимся с Knopix 
+<br>Установка модуля рейд
+<br>modporobe raid6 
+<br>Запуск сканирования дисков
+<br>mdadm -A -scan 
+<br>монтируем разлел 
+<br>mount  /dev/md126p1 /mnt
+<br>Делаем chroot
+<br>sudo mount /dev/sda1 /mnt
+<br>sudo mount --bind /dev /mnt/dev
+<br>sudo mount --bind /dev/pts  /mnt/dev/pts
+<br>sudo mount --bind /proc /mnt/proc
+<br>sudo mount --bind /sys  /mnt/sys
+<br>sudo chroot /mnt
+<br>Запускаем
+<br>pkg-reconfigure grub-pc 
+<br>все настройки по умолчанию в конце выбираем все диски
+<br>reboot
 <br>
 <br><h1>Docker</h1>
 <br>Install
