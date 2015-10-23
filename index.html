@@ -6022,6 +6022,412 @@ TO:
 PermitRootLogin yes
 <br>
 <br>
+<br>#############
+
+Автоматическое подключение монтирование сетевых дисков для АД пользователей
+
+
+
+
+устанавливаем
+
+
+
+
+apt-get instal  libpam-mount cifs-utils
+
+Создаем папку для монтирования сетевых ресурсов /net:
+
+
+
+
+mkdir /net
+
+
+
+
+приводим к такому виду
+
+/etc/security/pam_mount.conf.xml
+
+
+
+
+root@rdp:~# vi /etc/security/pam_mount.conf.xml
+
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE pam_mount SYSTEM "pam_mount.conf.xml.dtd">
+
+<!--
+
+        See pam_mount.conf(5) for a description.
+
+-->
+
+
+
+
+<pam_mount>
+
+
+
+
+                <!-- debug should come before everything else,
+
+                since this file is still processed in a single pass
+
+                from top-to-bottom -->
+
+
+
+
+<debug enable="1" />
+
+
+
+
+                <!-- Volume definitions -->
+
+
+
+
+
+
+
+                <!-- pam_mount parameters: General tunables -->
+
+
+
+
+<!--
+
+<luserconf name=".pam_mount.conf.xml" />
+
+-->
+
+
+
+
+<!-- Note that commenting out mntoptions will give you the defaults.
+
+     You will need to explicitly initialize it with the empty string
+
+     to reset the defaults to nothing. -->
+
+<mntoptions allow="nosuid,nodev,loop,encryption,fsck,nonempty,allow_root,allow_other" />
+
+<!--
+
+<mntoptions deny="suid,dev" />
+
+<mntoptions allow="*" />
+
+<mntoptions deny="*" />
+
+-->
+
+<mntoptions require="nosuid,nodev" />
+
+
+
+
+<logout wait="2000" hup="0" term="1" kill="1" />
+
+
+
+
+
+
+
+                <!-- pam_mount parameters: Volume-related -->
+
+
+
+
+<mkmountpoint enable="1" remove="true" />
+
+<volume user="*" fstype="cifs" server="172.16.16.1" path="test" mountpoint="/net/%(DOMAIN_USER)/Disk_V" />
+
+
+
+
+</pam_mount>
+
+~
+
+
+
+
+
+
+
+
+
+
+#############
+
+http://forum.ubuntu.ru/index.php?topic=208235.0
+
+
+
+
+Создаем файл скрипта и делаем его исполняемым (в дальнейшем можете использовать этот скрипт по своему усмотрению):
+
+
+
+
+touch /etc/logon
+
+chmod +x /etc/logon
+
+
+
+
+vi  /etc/logon
+
+
+
+
+#!/bin/bash
+
+ln -f -s /net/$USER/Disk_V /home/$DOMAIN/$USER/V
+<br>
+<br><h1>Owncloud</h1>
+<br>ownCould
+
+http://habrahabr.ru/post/208566/
+
+
+
+
+apt-get update && sudo apt-get upgrade
+
+
+
+
+apt-get install apache2 php5 php5-common php5-gd php5-intl php5-mcrypt php5-cli php5-ldap php5-sqlite curl libcurl3 libcurl4-openssl-dev php5-curl php-apc php5-mysql ffmpeg
+
+
+
+
+apt-get install mysql-client mysql-server
+
+
+
+
+пароль mysql
+
+Qwerty@123
+
+
+
+
+Важно: пароль не должен совпадать с паролем суперпользователя.
+
+
+
+
+mysql_secure_installation 
+
+
+
+
+Ввадим пароль рута mysql
+
+На все вопросы кроме «Change the root password» (Если не хотите менять пароль MySQL) отвечаем положительно Y.
+
+
+
+
+create database owncould; 
+
+
+
+
+create user 'owncould'@'localhost' IDENTIFIED BY '123456'; 
+
+
+
+
+GRANT ALL ON owncould.* to 'owncould'@'localhost' ;
+
+
+
+
+quit 
+
+
+
+
+
+
+
+nano /etc/apache2/sites-enabled/000-default 
+
+
+
+
+Находим строчку в разделе Directory /var/www/
+
+AllowOverride None
+
+
+
+
+на:
+
+AllowOverride All
+
+
+
+
+Перезапускаем apache:
+
+ service apache2 restart 
+
+
+
+
+Редактируем php.ini:
+
+ sudo gedit /etc/php5/apache2/php.ini 
+
+
+
+
+Находим строчки:
+
+mysql.default_socket =
+
+mysql.cache_size =
+
+memory_limit = 
+
+post_max_size =  
+
+upload_max_filesize =
+
+
+
+
+Меняем на:
+
+mysql.default_socket=/var/run/mysqld/mysqld.sock
+
+mysql.cache_size = 4000
+
+upload_max_filesize = 1024M       //максимальный размер файла который мы можем загрузить на наш сайт
+
+post_max_size = 1024M                //Должен быть больше или равен upload_max_filesize 
+
+memory_limit = 1024M                  //Должен быть больше или равен post_max_size
+
+
+
+
+Сохраняем файл и выходим.
+
+
+
+
+Перезапускам apache еще раз:
+
+ service apache2 restart 
+
+ 
+
+ 
+
+  cd /var/www/ 
+
+  
+
+  wget https://download.owncloud.org/community/owncloud-8.1.1.tar.bz2
+
+
+
+
+  
+
+  tar -xvf owncloud-8.1.1.tar.bz2
+
+
+
+
+  chown -R www-data:www-data /var/www/owncloud/
+
+
+
+
+  service apache2 restart
+
+
+
+
+  
+
+  http://192.168.0.120/owncloud/
+<br>
+<br><>ownCloud https
+
+1 apt-get install openssl
+
+2 a2enmod ssl
+
+3 a2enmod rewrite
+
+4 mkdir -p /etc/apache2/ssl
+
+5 openssl req -new -x509 -days 36500 -nodes -out /etc/apache2/ssl/owncloud.pem -keyout /etc/apache2/ssl/owncloud.key
+
+
+
+
+6
+
+root@deb-1:~# vi /etc/apache2/conf.d/owncloud.conf
+
+<VirtualHost *:80>
+
+RewriteEngine on
+
+ReWriteCond %{SERVER_PORT} !^443$
+
+RewriteRule ^/(.*) https://%{HTTP_HOST}/$1 [NC,R,L]
+
+</VirtualHost>
+
+
+
+
+<VirtualHost *:443>
+
+SSLEngine on
+
+SSLCertificateFile /etc/apache2/ssl/owncloud.pem
+
+SSLCertificateKeyFile /etc/apache2/ssl/owncloud.key
+
+DocumentRoot /var/www/
+
+
+
+
+<Directory /var/www/owncloud>
+
+AllowOverride All
+
+order allow,deny
+
+Allow from all
+
+</Directory>
+
+</VirtualHost>
+
+~
+<br>
 <h1>The End.</h1>
 <br>
 
