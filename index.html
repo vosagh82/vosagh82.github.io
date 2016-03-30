@@ -6440,9 +6440,16 @@ Allow from all
 <br>fallocate -l 100M file.out
 <br>
 <br>
-<br> 
-<br>
-<br>
+<br> <h1>Как заставить tab работать по vnc, а не по ctrl+tab XFCE vncserver</h1>
+<br>1) mcedit ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+<br>2) Ищем строку
+<br><property name="&lt;Super&gt;Tab" type="string" value="switch_window_key"/>
+<br>3) Меняем на строку
+<br><property name="&lt;Super&gt;Tab" type="empty"/>
+<br>4) Перезапускаем vncserver
+<br>$ tightvncserver -geometry 1920x1080 -depth 24 :1
+<br>убить
+<br>tightvncserver -kill :1
 <br>
 <br>
 <br>
