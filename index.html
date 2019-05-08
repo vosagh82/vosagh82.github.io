@@ -5078,7 +5078,9 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
                 </p>
                 <p>Control-последовательности - следующие (в скобках - дублирующие функциональные клавиши и, иногда, Meta-последовательности): 
                 </p>
-                <ul><strong>Control</strong>+<strong>G</strong> (<strong>F1</strong>) - вызов меню полной подсказки;   
+                <ul>
+                  <li><strong>Control</strong>+<strong>G</strong> (<strong>F1</strong>) - вызов меню полной подсказки;
+                  </li>
                   <li><strong>Control</strong>+<strong>X</strong> (<strong>F2</strong>) - выход из программы;
                   </li>  
                   <li><strong>Control</strong>+<strong>O</strong> (<strong>F3</strong>) - запись текущего файла;
@@ -5152,7 +5154,9 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
                   <li><strong>Meta</strong>+<strong>M</strong> - включение/выключение поддержки мыши (только при сборке с поддержкой 
                   <code>gpm
                   </code>;
-                  </li>  <strong>Meta</strong>+<strong>K</strong> - разрешить/запретить вырезание до конца;   
+                  </li>
+                    <li><strong>Meta</strong>+<strong>K</strong> - разрешить/запретить вырезание до конца;
+                    </li>
                   <li><strong>Meta</strong>+<strong>E</strong> - включение/выключение использования регулярных выражений (regexp).
                   </li>
                 </ul>Кроме того, в 
@@ -5174,7 +5178,7 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
 <br>
 <br>
 <br>
-<br>Перейти на вкладку Capture (нажав <tab>);<br>
+<br>Перейти на вкладку Capture (нажав tab);<br>
 <br>Перейти к элементу Capture, нажать &lt;пробел&gt; (после этого под этим ползунком<br> появится надпись CAPTUR);<br>
 <br>Перейти к элементу Input Source, выбрать Mic или Front Mic, в зависимости от<br> того куда подключён микрофон;
 <br>Проверить работу микрофона можно программой audacity. <br>
@@ -6056,10 +6060,10 @@ mkdir /net
 
 root@rdp:~# vi /etc/security/pam_mount.conf.xml
 
-<?xml version="1.0" encoding="utf-8" ?>
+<!--<?xml version="1.0" encoding="utf-8" ?>
 
 <!DOCTYPE pam_mount SYSTEM "pam_mount.conf.xml.dtd">
-
+-->
 <!--
 
         See pam_mount.conf(5) for a description.
@@ -6069,8 +6073,8 @@ root@rdp:~# vi /etc/security/pam_mount.conf.xml
 
 
 
-<pam_mount>
-
+<!--<pam_mount>
+-->
 
 
 
@@ -6082,9 +6086,9 @@ root@rdp:~# vi /etc/security/pam_mount.conf.xml
 
 
 
-
+<!--
 <debug enable="1" />
-
+-->
 
 
 
@@ -6116,8 +6120,8 @@ root@rdp:~# vi /etc/security/pam_mount.conf.xml
 
      to reset the defaults to nothing. -->
 
-<mntoptions allow="nosuid,nodev,loop,encryption,fsck,nonempty,allow_root,allow_other" />
-
+<!--<mntoptions allow="nosuid,nodev,loop,encryption,fsck,nonempty,allow_root,allow_other" />
+-->
 <!--
 
 <mntoptions deny="suid,dev" />
@@ -6128,14 +6132,14 @@ root@rdp:~# vi /etc/security/pam_mount.conf.xml
 
 -->
 
-<mntoptions require="nosuid,nodev" />
+<!--<mntoptions require="nosuid,nodev" />
+-->
 
 
-
-
+<!--
 <logout wait="2000" hup="0" term="1" kill="1" />
 
-
+-->
 
 
 
@@ -6145,7 +6149,7 @@ root@rdp:~# vi /etc/security/pam_mount.conf.xml
 
 
 
-
+<!--
 <mkmountpoint enable="1" remove="true" />
 
 <volume user="*" fstype="cifs" server="172.16.16.1" path="test" mountpoint="/net/%(DOMAIN_USER)/Disk_V" />
@@ -6158,7 +6162,7 @@ root@rdp:~# vi /etc/security/pam_mount.conf.xml
 ~
 
 
-
+-->
 
 
 
@@ -6389,7 +6393,7 @@ memory_limit = 1024M                  //Должен быть больше ил�
 
 root@deb-1:~# vi /etc/apache2/conf.d/owncloud.conf
 
-<VirtualHost *:80>
+<!--<VirtualHost *:80>
 
 RewriteEngine on
 
@@ -6415,7 +6419,7 @@ DocumentRoot /var/www/
 
 
 
-<Directory /var/www/owncloud>
+<Directory> /var/www/owncloud>
 
 AllowOverride All
 
@@ -6427,7 +6431,7 @@ Allow from all
 
 </VirtualHost>
 
-~
+-->
 <br>
 <h1>The End.</h1>
 <br>
@@ -6443,9 +6447,10 @@ Allow from all
 <br> <h1>Как заставить tab работать по vnc, а не по ctrl+tab XFCE vncserver</h1>
 <br>1) mcedit ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 <br>2) Ищем строку
-<br><property name="&lt;Super&gt;Tab" type="string" value="switch_window_key"/>
+<!--<property name="&lt;Super&gt;Tab" type="string" value="switch_window_key"/>
 <br>3) Меняем на строку
 <br><property name="&lt;Super&gt;Tab" type="empty"/>
+-->
 <br>4) Перезапускаем vncserver
 <br>$ tightvncserver -geometry 1920x1080 -depth 24 :1
 <br>убить
@@ -6495,7 +6500,7 @@ Allow from all
         $ git config user.name <br>
         <br>
         Как получить помощь? <br>
-        $ git help <глагол> <br>
+        $ git help глагол <br>
 
             <br>
 
@@ -6551,7 +6556,7 @@ Allow from all
             git rm --cached README <br>
 
 <br>test2
-
-            <br>
+<br>test3
 <br>
-</h1></tab></body></html>
+  </body>
+</html>
