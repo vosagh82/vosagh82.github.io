@@ -4,7 +4,7 @@
     $pass = return [String]$characters[$random]
 }
 
-Get-RandomCharacters -length 8 -characters 'abcdefghiklmnoprstuvwxyz1234567890' | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue -Verbose 4>&1
+Get-RandomCharacters -length 8 -characters 'abcdefghiklmnoprstuvwxyz1234567890' 
 
  
 
