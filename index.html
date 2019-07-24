@@ -6554,7 +6554,21 @@ Allow from all
             это удалить файл из индекса, оставив его при этом в рабочем каталоге. Другими словами, вы можете захотеть оставить файл на жёстком диске, и убрать его из-под бдительного ока  <br>
             <br>
             git rm --cached README <br>
-<p>
+
+
+    <h1>Сететвой интерфейс eth0 отпадает когда перезапускаешь сеть помогает только перезагрузка</h1>
+    <br>  systemctl status networking.service
+    <br> Process: 546 ExecStartPre=/bin/sh -c [ "$CONFIGURE_INTERFACES" != "no" ] && [
+    <br> -n "$(ifquery --read-environment --list --exclude=lo)" ] && udevadm settle
+    <br> (code=exited, status=1/FAILURE)
+    <br> проблема решается когда в файле
+    <br>
+    <br> /etc/network/interfaces
+    <br> добавить
+    <br> auto eth0
+
+
+    <p>
     <a href="http://vosagh82.github.io/python/Python_help.html">pyton</a>
 </p>
     <br>Востановление файлов ext4 c помощью testdisk на lvm
