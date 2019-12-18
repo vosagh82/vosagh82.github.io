@@ -2,9 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f25a17e7-ae59-4c50-ae7a-dbf38773a422" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/PowerShell/change password/password_change_v1.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PowerShell/old_user.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/glpi/GLPI_inst_agent.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/glpi/GLPI_inst_agent_solvve.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/glpi/test1.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/glpi/test2.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/book/R.Briggs.Python for kids - 2017.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/if_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/if_then_else_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/if_then_else_if_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/if_then_or_and_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/print_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/print_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/print_3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/silly_age.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/spaceship.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/turtle_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/turtle_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/examples/turtle_3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/module_python.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/python.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/python.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/examples/1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/examples/__init__.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,11 +134,6 @@
               <item name="vosagh82.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="vosagh82.github.io" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="vosagh82.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vosagh82.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="PowerShell" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -203,8 +222,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PowerShell.generator_password.ps1" />
       <item itemvalue="PowerShell.test.ps1" />
+      <item itemvalue="PowerShell.generator_password.ps1" />
       <item itemvalue="Python.1" />
     </list>
   </component>
@@ -338,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563975864128</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="chage">
+      <created>1567001616865</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1567001616865</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">

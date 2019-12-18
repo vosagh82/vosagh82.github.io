@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63a409c8-2077-45c1-af62-6fa308433244" name="Default Changelist" comment="" />
+    <list default="true" id="63a409c8-2077-45c1-af62-6fa308433244" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/PowerShell.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/change password/password_change_v1.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_user.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../glpi/GLPI_inst_agent.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../glpi/GLPI_inst_agent_solvve.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../glpi/test1.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../glpi/test2.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/book/R.Briggs.Python for kids - 2017.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/if_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/if_then_else_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/if_then_else_if_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/if_then_or_and_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/print_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/print_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/print_3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/silly_age.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/spaceship.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/turtle_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/turtle_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/examples/turtle_3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/module_python.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/python.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../python/python.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,14 +41,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/change password/generator_password2.ps1">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
               <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.ps1">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/change sting in file.ps1">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="62" lean-forward="true" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/old_user.ps1">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -36,6 +90,8 @@
     <option name="files">
       <list>
         <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/PowerShell.iml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
       </list>
     </option>
   </component>
@@ -51,9 +107,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PowerShell" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PowerShell" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -61,7 +127,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunAnythingCache">
     <myKeys>
@@ -83,7 +149,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PowerShell.generator_password2.ps1">
+  <component name="RunManager" selected="PowerShell.test.ps1">
     <configuration name="generator_password2.ps1" type="PowerShellRunType" factoryName="PowerShell" temporary="true" scriptUrl="$PROJECT_DIR$/change password/generator_password2.ps1" workingDirectory="C:\Users\voza">
       <method v="2" />
     </configuration>
@@ -92,8 +158,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PowerShell.generator_password2.ps1" />
         <item itemvalue="PowerShell.test.ps1" />
+        <item itemvalue="PowerShell.generator_password2.ps1" />
       </list>
     </recent_temporary>
   </component>
@@ -114,16 +180,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3261105" />
@@ -131,17 +194,27 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Maven" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/change password/generator_password2.ps1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test.ps1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -149,12 +222,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/change password/generator_password2.ps1">
+    <entry file="file://$PROJECT_DIR$/change sting in file.ps1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="136">
+          <caret line="8" column="62" lean-forward="true" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old_user.ps1">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
