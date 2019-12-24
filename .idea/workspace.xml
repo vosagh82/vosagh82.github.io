@@ -208,8 +208,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PowerShell.generator_password.ps1" />
       <item itemvalue="PowerShell.test.ps1" />
+      <item itemvalue="PowerShell.generator_password.ps1" />
       <item itemvalue="Python.1" />
     </list>
   </component>
