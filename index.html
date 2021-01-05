@@ -1222,21 +1222,21 @@
           <br>  #find Dropbox/ -type f -exec du -k {} \; | sort -rn |more
           <br>
           <br>
-          <br>  /home/vosa/.local/share  корзина
+          <br>  /home/user/.local/share  корзина
           <br>
           <br>  <h1>!Copздание iso образа с помощью команды cat</h1>
-          <br>  # cat /dev/cdrom &gt; /home/vosa/Рабочий\ стол/ubuntu_server.iso
+          <br>  # cat /dev/cdrom &gt; /home/user/Рабочий\ стол/ubuntu_server.iso
           <br>
           <br>
           <br>  <h1>!Создание iso диска</h1>
-          <br>   mkisofs -V "Label" -o /home/vosa/image.iso /home/vosa/Рабочий\ стол/
+          <br>   mkisofs -V "Label" -o /home/user/image.iso /home/user/Рабочий\ стол/
           <br>
           <br>  Где label метка диска image.iso название и путь к создаваемоемому iso образу после выполнения команды мы получим iso образ в который попадут все файлы с рабочего стола.
           <br>
           <br>
           <br>  <h1>!Создание iso образа диска утилитой dd</h1>
           <br>
-          <br>  Сделал так:$dd if=/dev/sr0 of=/home/vosa/winser2008_64.iso bs=2048
+          <br>  Сделал так:$dd if=/dev/sr0 of=/home/user/winser2008_64.iso bs=2048
           <br>  Параметр bs зависит от модели DVD-ROM и от степени изношенности DVD
           <br>  Я использовал 2048 чтобы прочиталось без ошибок.
           <br>
@@ -1248,7 +1248,7 @@
           <br>  #mount /dev/cdrom/  /mnt
           <br>
           <br>  $dd if=/dev/hda of=mymbrfile bs=512 count=1 Скопирует MBR загрузочного
-          <br>  $dd if=/dev/zero of=/home/vosa/test/dd-10 count=1 bs=1000 Создаст бинарный файл размер  = 1000kb (count * bs= число байт котрое будет скопировано)
+          <br>  $dd if=/dev/zero of=/home/user/test/dd-10 count=1 bs=1000 Создаст бинарный файл размер  = 1000kb (count * bs= число байт котрое будет скопировано)
           <br>  $sudo dd if=whatever.iso of=/dev/sdb1
           <br>
           <br>
@@ -1431,14 +1431,14 @@
           <br>  $find /home/chris/ -atime +60 Ищет все файлы доступ к которым за последнии 60 дней, -atime 60 ровно 60 дней, -atime -60 позже 60 дней
           <br>  $find /etc -type d Покажет все директории в каталоге /etc
           <br>  $find / -perm 750 2&gt; /dev/null Покажет все файлы с правами доступа 750
-          <br>  $find /var -user vosa 2&gt; /dev/null  Ищет  в каталоге  фалы пользователя vosa
+          <br>  $find /var -user user 2&gt; /dev/null  Ищет  в каталоге  фалы пользователя user
           <br>  $find /sbin/ -type f ! -perm /o+w -print | xargs ls -l
           <br>  $find / -xdev -size +10M -print | xargs ls -lS &gt; /tmp/bigfiles.txt
           <br>
           <br>  $find /home -type f -mtime +10 -name "*.txt" -exec cp {} old \;
           <br>   Ищет текстовые файлы старше 10 дней и копирует их в директорию old.
           <br>
-          <br>  $ find /home/vosa \( -name "Dropbox" -prune \) -o \( -type f -name "*.txt" \)
+          <br>  $ find /home/user \( -name "Dropbox" -prune \) -o \( -type f -name "*.txt" \)
           <br>   Ищет все текстовые файлы в домашней директории кроме директории Dropbox. Пробелы должны быть перед \( и сзади. И опция -о.
           <br>
           <br>  $ find . -type l -print
@@ -1499,7 +1499,7 @@
           <br>  <h1>!Поиск текста в файлах grep</h1>
           <br>
           <br>  $ grep test myfile.txt &nbsp; &nbsp;	Поиск слова test в файле.
-          <br>  $ grep -R test /home/vosa  &amp;emsp	Поиск слова test в директории /home/vosa
+          <br>  $ grep -R test /home/user  &amp;emsp	Поиск слова test в директории /home/user
           <br>  $ grep [a-z] myfile.txt &amp;thinsp	Поиск любых символов от a-z в файле.
           <br>  $ grep -v test myfile.txt  &amp;emsp	Обратный поиск выведет все строки без test.
           <br>  $ grep -c test myfile.txt &amp;emsp	Выведет сумму строк где встречается test.
@@ -1660,12 +1660,12 @@
           <br>  <h1>!Копировать файлы с scp ssh</h1>
           <br>
           <br>  Надо копировать в существующую директорию.
-          <br>  $scp vmware-vmrc-linux-x86.xpi vosa@172.16.18.23:/home/vosa
-          <br>  $scp -r dir vosa@172.16.18.23:/home/vosa		Скопировать диркториию в /home/vosa
+          <br>  $scp vmware-vmrc-linux-x86.xpi user@172.16.18.23:/home/user
+          <br>  $scp -r dir user@172.16.18.23:/home/user		Скопировать диркториию в /home/user
           <br>  $scp locl_file user@host:/tmp/remoute_file
           <br>  $scp user@host:/tmp/remote_file local_file
           <br>  $scp user1@host1:file user2@host2:
-          <br>  $scp vosa@172.16.24.38:/etc/samba/smb.conf /home/vosa/Dropbox/linux/
+          <br>  $scp user@172.16.24.38:/etc/samba/smb.conf /home/user/Dropbox/linux/
           <br>   Скопировать с удаленного сервера в домашний каталог конфигурацыонный файл.
           <br>
           <br>
@@ -1949,7 +1949,7 @@
           <br>  работает и без этого.
           <br>  Выполняем действия выше.
           <br>  Создаем ярлык на рабочем столе и добавляем LANG="ru_RU.CP1251" полчаем.
-          <br>  env LANG="ru_RU.CP1251" WINEPREFIX="/home/vosa/.wine" wine C:\\windows\\command\\start.exe /Unix /home/vosa/.wine/dosdevices/c:/users/Public/???????\ ????/?????????/UltraVNC/UltraVNC\ Viewer/Run\ UltraVNC\ Viewer\ \(Listen\ Mode\).lnk
+          <br>  env LANG="ru_RU.CP1251" WINEPREFIX="/home/user/.wine" wine C:\\windows\\command\\start.exe /Unix /home/user/.wine/dosdevices/c:/users/Public/???????\ ????/?????????/UltraVNC/UltraVNC\ Viewer/Run\ UltraVNC\ Viewer\ \(Listen\ Mode\).lnk
           <br>
           <br>  Раскладу надо переключать в ручную на удаленной машине и в параметрах клавиатуры обязательно «язык ввода по умолчанию Английский» в противном случае русских букв не будет. Ели стоял русский изменить на  английский и переподключиться.  На linux должна стоять английская раскладка при русской набора нет.
           <br>  Результат: ОК на ubuntu 10.04.
@@ -2282,7 +2282,7 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
           <br>  Забыл системный пароль
           <br>  При загрузке держать Shift появится меню GRAB выбрать режим восстановления (recovery mode ) и выбрать в меню root Drop to root shell….
           <br>   Сбросить пароль
-          <br>  #passwd vosa вводим новый пароль
+          <br>  #passwd user вводим новый пароль
           <br>
           <br>  Выход из  системы через интервал времени
           <br>  добавить строку TMOUT=3600 в секундах
@@ -2463,7 +2463,7 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
           <br>
           <br>
           <br>  <h1>!Добавить новый каталог в переменную окружения</h1>
-          <br>  $export PATH=''$PATH:/home/vosa''
+          <br>  $export PATH=''$PATH:/home/user''
           <br>
           <br>
           <br>  <h1>!Определить какой shell запущен</h1>
@@ -2503,7 +2503,7 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
           <br>
           <br>
           <br>
-          <br>  <h1>!Костюков  выбрать файлы из списка за последние 4 дня </h1>
+          <br>  <h1>!выбрать файлы из списка за последние 4 дня </h1>
           <br>  find /mnt/p1 -mtime -4 &gt;listf.lst
           <br>  делаем копирование файлов
           <br>    fgrep -v .LNG listf.lst | fgrep -v '/PROGRAM/' | while  read arg ; do cp -v -p --parents "$arg" /srv/crash16/; done
@@ -2719,7 +2719,7 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
           <br>  #startx  --  :1
           <br>  ВСЕ
           <br>  Через ssh
-          <br>  #ssh –X vosa@172.16.18.10
+          <br>  #ssh –X user@172.16.18.10
           <br>  Подключение к X srevery из Windows
           <br>  Установить клиента xming
           <br>
@@ -2737,7 +2737,7 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
           <br>  3. Запускаем под рутом наш виртуальный сервер
           <br>  #vboxwebsrv (можно с опцией -H 172.16.16.2 наш хост)
           <br>  4. Заходим на сайт http://localhost/phpvirtualbox
-          <br>  Логин и пароль по умолчанию admin admin vboxusers:
+          <br>  Логин  по умолчанию  vboxusers:
           <br>  Ошибка Could not load the Host USB Proxy Service (VERR_FILE_NOT_FOUND) надо добавить себя в vboxusers группу
 <br>При попытке запустить сетевой интерфейс $sudo ifup eth0 получаем сообщение
 <br>eth0: ERROR while getting interface flags: No such device
@@ -2746,7 +2746,7 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
 <br>
 <br>
           <br>  При ошибке An error occurred communicating with your vboxwebsrv Выполнить команду. # vboxmanage setproperty websrvauthlibrary null права на папку phpvirtualbox дал все 777 (надо разобраться) отключить пароль при входе в conf.php опция разкоментировать var $noAuth = true; Востановить пароль надо переименовать /var/www/phpvirtulbox/recovery.php.disable на recovery.php и зайти на сайт http://localhost/phpvirtualbox/recovery.php
-          <br>  востонавливаем пароль по умолчанию admin admin.
+          <br>  востонавливаем
           <br>  5. Установка пакета расширения для virtualbox. cd /tmp wget http://download.virtualbox.org/virtualbox/4.0.0/Oracle_VM_VirtualBox_Extension_Pack-4.0.0-69151.vbox-extpack VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-4.0.0-69151.vbox-extpack При появлениие 2-х мышок надо поставить пакет дополнения http://download.virtualbox.org/virtualbox/4.0.4/VBoxGuestAdditions_4.0.4.iso все Настройка доступа через ssl к virtualbox.
           <br>  HTTPS Configuration
           <br>  The mod_ssl module adds an important feature to the Apache2 server
@@ -3180,7 +3180,7 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
           <br>  $ ssh-keygen
           <br>  Далие ок-ок-ок
           <br>  Передаем сгенерированный ключ на удаленный сервер
-          <br>  $ ssh-copy-id vosa@fs
+          <br>  $ ssh-copy-id user@fs
           <br>  Теперь можно заходить без ввода пароля через ssh
           <br>  $ssh user@fs
           <br>
@@ -3240,7 +3240,7 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
           <br>   #date +%d-%m-%y
           <br>
           <br>  <h1>!Разархивировать zip файл</h1>
-          <br>  unzip /home/vosa/Загрузки/clonezilla-live-1.2.10-14-i686-pae.zip -d /media/Флешка
+          <br>  unzip /home/user/Загрузки/clonezilla-live-1.2.10-14-i686-pae.zip -d /media/Флешка
           <br>
           <br>
           <br>  <h1>!Для интерактивного вывода на кансоль wath</h1>
@@ -4567,7 +4567,7 @@ Mar 29 04:06:00 rst CROND[4549]: (user) CMD (/home/user/mail)
               <br>  стереть диск
               <br>  #wodim -v blank=fast dev=/dev/sr0
               <br>  Записать диск
-              <br>  # wodim dev=/dev/sr0 -speed=16 /home/vosa/Downloads/ctkarchlive-0.7-i686.iso
+              <br>  # wodim dev=/dev/sr0 -speed=16 /home/user/Downloads/ctkarchlive-0.7-i686.iso
               <br>
               <br>  -dummy&nbsp;— симуляция прожига с выключенным лазером. Полезно, чтобы определить, сколько времени может занять запись.
               <br>  -multi&nbsp;— многосессионный диск.
