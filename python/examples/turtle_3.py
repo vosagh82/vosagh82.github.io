@@ -1,6 +1,6 @@
 import turtle
 
- 
+
 turtle.reset()
 turtle.backward(100)
 turtle.up()
