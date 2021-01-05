@@ -3,7 +3,7 @@ for ($i = 2; $i -lt 10; $i++)
 {
     $ip="10.88.20.$i"
 
-
+ 
     #ping
 
     $ipStatus=Test-Connection -ComputerName $ip -Quiet -Count 1
