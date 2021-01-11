@@ -6570,9 +6570,55 @@ Allow from all
     <br> >[None   ] Non partitioned media
     <br>  >[ Advanced ] Filesystem Utils
 
-    <br>123
-    >[  List  ]
     <br>
+<h1>Cerbot letsencrypt</h1>
+<p> Проверить или посмотреть сертификат <br>
+  Переходим в  cd /etc/letsencrypt/live/.. <br>
+  Командой увидим свойства и информацию о сертификате<br>
+  #openssl x509 -text -noout -in cert.pem <br>
+  #openssl x509 -text -in /etc/letsencrypt/live/../cert.pem
+
+Для nginx в конфиге сайта должны быить прописаны пути к сертификатам<br>
+vi /etc/nginx/sites-enabled/default на  /etc/letsencrypt/live/.. <br>
+</p>
+
+<p>Журналы letsencrypt <br>
+ tail -f /var/log/letsencrypt/letsencrypt.log
+</p>
+
+<p> Конфигурация cron лежит в файле<br>
+cat /etc/cron.d/certbot<br>
+</p>
+
+<p> запросить статус таймера с помощью команды systemctl<br>
+ sudo systemctl status certbot.timer<br>
+</p>
+<p>Чтобы протестировать процесс обновления,<br>
+   можно сделать запуск «вхолостую» с помощью certbot:<br>
+sudo certbot renew --dry-run<br>
+</p>
+privkey.pem — приватный ключ для сертификата
+Используется Apache для SSLCertificateKeyFile и nginx для ssl_certificate_key.
+
+cert.pem (сертификат сервера)
+Используется Apache для SSLCertificateFile.
+
+chain.pem (сертификат цепочки)
+Он же используется Apache для SSLCertificateChainFile.
+
+fullchain.pem (соединение chain.pem и cert.pem)
+Он же используется nginx для ssl_certificate.
+
+</p>
+
+Смена адреса уведомления об истечении срока действия сертификата
+certbot register --email kost@kost.su
+не работает ошибка
+There is an existing account; registration of a duplicate account with this command is currently unsupported.
+
+    <br>
+
+
 
 
   </body>
