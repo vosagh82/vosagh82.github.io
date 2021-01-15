@@ -6618,8 +6618,22 @@ There is an existing account; registration of a duplicate account with this comm
 
     <br>
 
+https://certbot.eff.org/docs/using.html#certbot-commands
+
+<p>Первоначальная настройка запустить получение сертификата для ngingx
+  certbot --nginx
+</p>
+
+Обновить сертификаты:
+# certbot renew
+
+Изменить сертификаты без изменения файлов конфигурации nginx:
+# certbot --nginx certonly
+
+
 
 
 
   </body>
 </html>
+S
