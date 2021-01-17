@@ -5942,10 +5942,10 @@ sadf
 <br>
 <br>
 <br>Комманды
-☑ установка<br>
+<br>установка
 <br>https://docs.docker.com/install/linux/docker-ce/debian/
-curl -fsSL -x 10.88.20.11:8080 https://download.docker.com/linux/debian/gpg | apt-key add -
-<br>
+<br>Скачать через прокси
+<br> curl -fsSL -x 10.88.20.11:8080 https://download.docker.com/linux/debian/gpg | apt-key add -
 <br>☑ прокси
 <br>https://docs.docker.com/config/daemon/systemd/
 <br>☑ команды
@@ -5961,19 +5961,21 @@ curl -fsSL -x 10.88.20.11:8080 https://download.docker.com/linux/debian/gpg | ap
 <br>docker pull hello-world
 <br>запустить
 <br>docker run hello-world
-Запустить как демон
-docker container run -d test
-<br>установит  ubuntu и перейдет  в консоль
+<br>Запустить как демон
+<br>docker container run -d test
+<br>Перейдет  в консоль
 <br>docker run -it ID_container bash
 <br>Подключится к контейнеру
-<br> docker exec -i -t ed3e738e5c06 bash
+<br>docker exec -i -t ed3e738e5c06 bash
+<br>Для alpine
+<br>docker exec -it test /bin/ash
 <br>Удалить Docker-контейнер по CONTAINER ID или NAME:
-<br>$ docker rm <container>Принудительно удалить запущенный Docker-контейнер:
-<br>$ docker rm -f <container>
+<br>$ docker rm <container>
+<br>$ docker rm -f <container>Принудительно удалить запущенный Docker-контейнер:
 <br>Удалить Все Docker-контейнеры
 <br>$ docker rm -f $(docker ps -a -q)
 <br>☑ удаление всех образов
-docker rmi -f $(docker images -q)
+<br>docker rmi -f $(docker images -q)
 <br>☐ Права
 <br>chown -R 999:999 /local/vol/paths
 <br>chown -R ubuntu:docker /local/vol/paths<br>
@@ -5988,9 +5990,15 @@ docker rmi -f $(docker images -q)
 <br>docker system prune --all
 <br>docker volume prune
 <br>docker-compose up
-<br>
+<br>Запуск build перед запуском должен быть файл dockerfile
+<br>примеры в git docker lesson2
+<br>docker bulid -t test2 .
+<br>docker run --name test2 -p 80:80 --rm -d test2
+<br>name имя как будет называться контейнер, опция  --rm удалит контейнер после остановки
+<br>docker stop test2
+<br>Остановить контейнер
 
-<br>
+
 <br><h1>Долгое Подключение по SSH -- Убираем Задержку</h1>
 <br># vi /etc/ssh/sshd_config
 <br>добавляем
