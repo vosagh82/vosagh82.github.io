@@ -5939,52 +5939,57 @@ sadf
 <br>reboot
 <br>
 <br><h1>Docker</h1>
-<br>Install
-<br>http://linuxconfig.org/package-docker-io-has-no-installation-candidate-debian-jessie
-<br>Package 'docker.io' has no installation candidate - Debian Jessie
-Docker and its Docker.io debian pakcage is currently not available Debian Jessie thus:
- Package 'docker.io' has no installation candidate
-The easiest way to install docker is to use get.docker.com script: First, install curl tool:
-# apt-get install curl
-Once ready download and run get.docker.com script:
-# curl -sSL https://get.docker.com/ | sh
-+ sh -c sleep 3; apt-get update
-Get:1 http://debian.mirror.uber.com.au jessie InRelease [214 kB]
-...
-Processing triggers for libc-bin (2.19-13) ...
-+ sh -c docker version
-Client version: 1.6.0
-Client API version: 1.18
-Go version (client): go1.4.2
-Git commit (client): 4749651
-OS/Arch (client): linux/amd64
-Server version: 1.6.0
-Server API version: 1.18
-Go version (server): go1.4.2
-Git commit (server): 4749651
-OS/Arch (server): linux/amd64
+<br>
+<br>
+<br>Комманды
+☑ установка<br>
+<br>https://docs.docker.com/install/linux/docker-ce/debian/
+curl -fsSL -x 10.88.20.11:8080 https://download.docker.com/linux/debian/gpg | apt-key add -
+<br>
+<br>☑ прокси
+<br>https://docs.docker.com/config/daemon/systemd/
+<br>☑ команды
+<br>Список образов в вашей системе можно глянуть командой:
+<br># docker images
+<br>Список контейнеров:
+<br>#docker ps
+<br>Для удаления образа:
+<br>docker rmi <image>
+<br>удалить все образы
+<br>docker rmi -f $(docker images)
+<br>Скачать контейр
+<br>docker pull hello-world
+<br>запустить
+<br>docker run hello-world
+Запустить как демон
+docker container run -d test
+<br>установит  ubuntu и перейдет  в консоль
+<br>docker run -it ID_container bash
+<br>Подключится к контейнеру
+<br> docker exec -i -t ed3e738e5c06 bash
+<br>Удалить Docker-контейнер по CONTAINER ID или NAME:
+<br>$ docker rm <container>Принудительно удалить запущенный Docker-контейнер:
+<br>$ docker rm -f <container>
+<br>Удалить Все Docker-контейнеры
+<br>$ docker rm -f $(docker ps -a -q)
+<br>☑ удаление всех образов
+docker rmi -f $(docker images -q)
+<br>☐ Права
+<br>chown -R 999:999 /local/vol/paths
+<br>chown -R ubuntu:docker /local/vol/paths<br>
+<br>☑ Несколько статичных сайтов на одном хосте, используя nginx и Docker
+<br>    https://yanzay.com/post/multiple_static_sites_nginx_docker/
+<br>☑   docker без sudo
+<br>$ sudo d -aG docker $USER
+<br>и перлогинится.
+<br>☐ ERROR: readlink /var/lib/docker/overlay2: invalid argument
+<br>Помогло удаление всех кешов и томов
+<br>10I think the easier way is to remove all cache and containers and pull them again.
+<br>docker system prune --all
+<br>docker volume prune
+<br>docker-compose up
+<br>
 
-If you would like to use Docker as a non-root user, you should now consider
-adding your user to the "docker" group with something like:
-
-  sudo usermod -aG docker your-user
-
-Remember that you will have to log out and back in for this to take effect!
-Test your docker installation by creating a Ubuntu docker container:
-# docker run -i -t ubuntu /bin/bash
-Unable to find image 'ubuntu:latest' locally
-
-latest: Pulling from ubuntu
-511136ea3c5a: Pull complete
-f3c84ac3a053: Pull complete
-a1a958a24818: Pull complete
-9fec74352904: Pull complete
-d0955f21bf24: Already exists
-Digest: sha256:7b27f7cc97d4c94fdebb2cf99ddaadd0e8fc8ec4aed2cf56a8ee8fe7dc2ec4a4
-Status: Downloaded newer image for ubuntu:latest
-
-root@f3e5b3b575bd:/# cat /etc/issue
-Ubuntu 14.04.2 LTS \n \l
 <br>
 <br><h1>Долгое Подключение по SSH -- Убираем Задержку</h1>
 <br># vi /etc/ssh/sshd_config
