@@ -6526,6 +6526,19 @@ Allow from all
             $ git status -s <br>
             <br>
 
+            <br>  Мердж ветки в мастер
+            <br>  Выполняется после завершения работы над своей веткой при помощи команды git merge. Чтобы вмерджить ветку в мастер, нужно сначала перейти в мастер, а затем выполнить git merge branch_name.
+
+        <br>  $ git checkout master
+        <br>  $ git merge home
+      <br>    И не забываем запушить изменения
+        <br>  $ git push origin master
+        <br>  Как вмерджить мастер в свою ветку
+  <br>Сначала идем в мастер, подтягиваем изменения с сервера, то есть делаем git pull. Затем переключаемся в свою ветку и делаем git merge master
+      <br>$ git checkout home
+      <br>$ git merge master
+
+
 
             Игнорирование файлов <br>
             $ cat .gitignore <br>
