@@ -4,7 +4,20 @@ services:
         api:
            build: ./api
            command: npm run start
+           restart: unless-stopped
            ports:
             - "3000:3000"
            environment:
             - PORT=3000
+            - HOST=http://realworld-docker.com
+            - MONGO_URL=mongodb://api_db:27017/api
+           depends_on:
+            - api_db
+         
+        api_db:
+            image: mongo:latest
+            volumes:
+            - mongodb_api:/data/db
+
+volumes:
+        mongodb_api:
