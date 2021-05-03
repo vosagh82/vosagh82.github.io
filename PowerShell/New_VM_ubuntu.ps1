@@ -32,5 +32,7 @@ Connect-VMNetworkAdapter -VMName $name_vm -Name "Сетевой адаптер" 
 $VMHardDiskDrive = Get-VMHardDiskDrive -VMName $name_vm
 Set-VMFirmware $name_vm  -FirstBootDevice $VMHardDiskDrive
 
+#Disable automatic checkpoints
+Set-VM -VMName $name_vm -AutomaticCheckpointsEnabled $False
 #start
 Start-VM –Name $name_vm
