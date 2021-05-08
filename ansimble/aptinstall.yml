@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt: update_cache=yes cache_valid_time=3600
+
+    - name: Upgrade all apt packages
+      apt: upgrade=dist
+
+    - name: Install Packages
+      apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+      vars:
+        packages:
+        - mc
+        - ntp
