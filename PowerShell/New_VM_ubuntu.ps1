@@ -1,5 +1,5 @@
 ﻿
-$name_vm = 'ubuntu20t1-wordpress'
+$name_vm = 'ubuntu20t1-glpi-test'
 $path_vm = 'D:\Hyper-V\linux\'
 #$path_iso = 'D:\soft\iso\windows\Windows Server\Windows Server 2012\SW_DVD5_Win_Svr_Std_and_DataCtr_2012_64Bit_Russian_Core_MLF_X18-27640.ISO'
 $vhd_vm = $path_vm + '\' + $name_vm  + '\'+ $name_vm + '.vhdx'
@@ -14,7 +14,7 @@ New-VM -Name $name_vm -MemoryStartupBytes $memory_vm -Path $path_vm -Generation 
 #New-VHD -Path $vhd_vm -SizeBytes $size_vhd_vm -Dynamic
 
 #Copy hdd from ubuntu
-Copy-Item -Path "D:\Hyper-V\linux\ubuntu20t1\Virtual Hard Disks\ubuntu20t1.vhdx" -Destination "$vhd_vm" -Recurse
+Copy-Item -Path "D:\Hyper-V\linux\ubuntu20default\Virtual Hard Disks\ubuntu20default.vhdx" -Destination "$vhd_vm" -Recurse
 
 #Connect hdd disk in vm
 Add-VMHardDiskDrive -VMName $name_vm -Path $vhd_vm
