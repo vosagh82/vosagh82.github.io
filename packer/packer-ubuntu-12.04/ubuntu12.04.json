@@ -1,0 +1,46 @@
+
+
+{
+  "variables": {
+    "vm_name": "ubuntu-xenial",
+    "cpus": "2",
+    "memory": "1024",
+    "disk_size": "21440",
+    "iso_url": "ubuntu-18.04.5-live-server-amd64.iso",
+    "iso_checksum": "md5:fcd77cd8aa585da4061655045f3f0511"
+  },
+  "builders": [
+    {
+      "vm_name": "{{user `vm_name`}}",
+      "type": "hyperv-iso",
+      "disk_size": "{{user `disk_size`}}",
+      "guest_additions_mode": "disable",
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "communicator": "ssh",
+      "ssh_username": "packer",
+      "ssh_password": "packer",
+      "ssh_timeout": "4h",
+      "http_directory": "./",
+      "boot_wait": "5s",
+      "boot_command": [
+        "<esc><wait10><esc><esc><enter><wait>",
+        "set gfxpayload=1024x768<enter>",
+        "linux /install/vmlinuz ",
+        "preseed/url=http://{{.HTTPIP}}:{{.HTTPPort}}/hyperv-taliesins.cfg ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "hostname={{.Name}} ",
+        "fb=false debconf/frontend=noninteractive ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+        "keyboard-configuration/variant=USA console-setup/ask_detect=false <enter>",
+        "initrd /install/initrd.gz<enter>",
+        "boot<enter>"
+      ],
+      "shutdown_command": "echo 'packer' | sudo -S -E shutdown -P now",
+      "memory": "{{user `memory`}}",
+      "cpus": "{{user `cpus`}}",
+      "generation": 2,
+      "enable_secure_boot": false
+    }
+  ]
+}
