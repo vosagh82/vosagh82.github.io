@@ -1,5 +1,5 @@
 ﻿
-$name_vm = 'ubuntu20t1-glpi-test'
+$name_vm = 'ubuntu20t1-moodle2'
 $path_vm = 'D:\Hyper-V\linux\'
 #$path_iso = 'D:\soft\iso\windows\Windows Server\Windows Server 2012\SW_DVD5_Win_Svr_Std_and_DataCtr_2012_64Bit_Russian_Core_MLF_X18-27640.ISO'
 $vhd_vm = $path_vm + '\' + $name_vm  + '\'+ $name_vm + '.vhdx'
